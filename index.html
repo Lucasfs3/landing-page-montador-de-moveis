@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHelp Montador de Móveis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+:root {
+    --primary: #2C3E50;
+    --secondary: #E74C3C;
+    --light: #ECF0F1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--light);
+}
+
+.header {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.cta-button {
+    background-color: var(--secondary);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+.services {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.social-links {
+    background-color: var(--primary);
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+</style></head><body>
+    <header class="header">
+        <h1>LHelp Montador de Móveis</h1>
+        <p>Montagem com qualidade e garantia</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="floating">Precisando montar seus móveis?</h2>
+            <p>Conte com um profissional experiente e dedicado</p>
+            <a href="https://wa.me/5522996072480?text=Olá! Gostaria de um orçamento para montagem de móveis" target="_blank" class="cta-button">
+                <i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-couch" style="font-size: 2rem; margin-bottom: 30px; color: var(--secondary)"></i>
+                <h3>Montagem de Móveis</h3> <br>
+                <p>Montagem profissional de todos os tipos de móveis</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools" style="font-size: 2rem; margin-bottom: 30px; color: var(--secondary)"></i>
+                <h3>Desmontagem</h3> <br>
+                <p>Desmontagem cuidadosa para mudanças</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-links">
+        <h2 style="color: white">Redes sociais</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lucasfs3/?next=%2F" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Adiciona efeito de smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Adiciona efeito de hover nos cards
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>
